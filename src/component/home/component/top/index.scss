@@ -1,0 +1,22 @@
+.top{
+  .logo{
+    width: 100px;
+    .logo_txt{
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    display: inline-block;
+    }
+    .icons-list{
+    display: inline-block;
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    }
+  }
+  .clos{
+      position: fixed;
+      right: 10px;
+      top:0px
+  }
+}
