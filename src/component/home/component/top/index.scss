@@ -1,6 +1,8 @@
 .top{
   .logo{
     width: 100px;
+    display: inline-block;
+    line-height: 50px;
     .logo_txt{
     color: white;
     font-size: 30px;
@@ -13,6 +15,10 @@
     font-size: 25px;
     font-weight: 800;
     }
+  }
+  .avatar{
+    display: inline-block;
+    margin-left: 100px;
   }
   .clos{
       position: fixed;

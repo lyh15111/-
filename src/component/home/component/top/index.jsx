@@ -3,7 +3,7 @@ import { Avatar,Button } from 'antd';
 import { UserOutlined,PoweroffOutlined,EditOutlined} from '@ant-design/icons';
 import './index.scss'
 
-export default class index extends Component {
+export default class Index extends Component {
   render() {
     return (
       <div className='top'>

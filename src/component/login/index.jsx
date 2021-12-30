@@ -106,7 +106,7 @@ export default class Index extends Component {
       </Form.Item>
     </Form>
     {
-      this.state.usern && <Navigate to="/home" replace={true} />
+      this.state.usern && <Navigate to="/index" replace={true} />
     }
     </div>
 
