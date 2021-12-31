@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Top from './component/top'
 import Mune from './component/mune'
-import Conter from './component/conter'
+// import Conter from './component/conter'
+import Home from '../page/home'
 import {Layout} from 'antd';
 import './index.scss'
 
@@ -22,7 +23,7 @@ export default class Index extends Component {
       <Layout>
         <Sider><Mune /></Sider>
         <Content>
-           <Conter />
+           <Home />
         </Content>
       </Layout>
       <Footer>Footer</Footer>
