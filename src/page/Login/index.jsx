@@ -1,52 +1,50 @@
-import React, { Component } from 'react'
-import {Navigate} from 'react-router-dom';
+import React, { useContext,useState } from 'react'
+import { context } from '../../component/AppProvider';
 
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import './index.scss';
 
-export default class Index extends Component {
+ function Index () {
+    // const [form,setFtom]=useState('');
+    const [user,setUser]=useState('');
+    const [passwork,setPassWork]=useState('');
+    const {setLogined}=useContext(context)
 
-  constructor(props){
-    super(props);
-    this.state={
-      form:'',
-      user:'',
-      passwork:'',
-      usern: null
+  // constructor(props){
+  //   super(props);
+  //   this.state={
+  //     form:'',
+  //     user:'',
+  //     passwork:'',
+  //     usern: null
 
-    }
-  }
+  //   }
+  // }
 
-  componentDidMount(){
-    console.log(this.props);
-  }
+//  function componentDidMount(){
+//     console.log(this.props);
+//   }
 
-  onFinish = (e) => {
-   const user=this.state.user;
-   const pass=this.state.passwork;
-     if(user==='123'&&pass==='123'){
+ function onFinish(value){
+
+     if(user==='123'&&passwork==='123'){
        console.log('登录成功')
-       this.setState({usern: true})
+       setLogined(true)
       //  return history.push('/home')
      }else{
        alert("登录失败")
      }
   };
-  hanldUser=(e)=>{
-    this.setState({
-      user:e.target.value
-    })
+ function hanldUser(e){
+    setUser(e.target.value)
+    console.log(e.target.value)
   }
-  hanldPass=(e)=>{
-    this.setState({
-      passwork:e.target.value
-    })
+ function hanldPass(e){
+    setPassWork(e.target.value)
+    console.log(e.target.value)
   }
 
-
-  render() {
-    const {user,passwork}=this.state
 
     return (
 
@@ -57,7 +55,7 @@ export default class Index extends Component {
       initialValues={{
         remember: true,
       }}
-      onFinish={this.onFinish}
+      onFinish={onFinish}
     >
       <Form.Item
         name="username"
@@ -68,7 +66,7 @@ export default class Index extends Component {
           },
         ]}
       >
-        <Input prefix={<UserOutlined className="site-form-item-icon" />} value={user} maxLength="200px" onChange={this.hanldUser} placeholder="Username" />
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} value={user} maxLength="200px" onChange={hanldUser} placeholder="Username" />
       </Form.Item>
       <Form.Item
         name="password"
@@ -84,7 +82,7 @@ export default class Index extends Component {
           type="password"
           maxLength="200px"
           value={passwork}
-          onChange={this.hanldPass}
+          onChange={hanldPass}
           placeholder="Password"
         />
       </Form.Item>
@@ -105,11 +103,12 @@ export default class Index extends Component {
          <Button type='text' >注册账号</Button>
       </Form.Item>
     </Form>
-    {
+    {/* {
       this.state.usern && <Navigate to="/index" replace={true} />
-    }
+    } */}
     </div>
 
     )
   }
-}
+
+export default Index

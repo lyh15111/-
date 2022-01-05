@@ -1,25 +1,21 @@
 import React from 'react';
 import { Route,Routes  } from "react-router-dom";
-import routerList from './Main/router'
-
-// import Login from './component/login'
+import Login from './page/Login'
+import Home from './page/Home'
+import Notfort from './page/NotFort'
+import ProtectRouter from './component/ProtecteRouter'
 import './App.css';
 
 function App() {
   return (
-       <Routes>
-          {
-            routerList.map(({path, component, exact = true}, key) => {
-                return (<Route
-                          exact={exact}
-                          key={key}
-                          path={path}
-                          element={component}
-                        />)
-            })
-          }
+       <div>
 
-      </Routes>
+        <Routes>
+          <Route path='/login' element={<Login/>} />
+          <Route path='/' element={<ProtectRouter><Home /></ProtectRouter>} />
+          <Route path='*' element={<Notfort />} />
+        </Routes>
+      </div>
   );
 }
 
