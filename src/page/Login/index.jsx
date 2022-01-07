@@ -11,21 +11,6 @@ import './index.scss';
     const [passwork,setPassWork]=useState('');
     const {setLogined}=useContext(context)
 
-  // constructor(props){
-  //   super(props);
-  //   this.state={
-  //     form:'',
-  //     user:'',
-  //     passwork:'',
-  //     usern: null
-
-  //   }
-  // }
-
-//  function componentDidMount(){
-//     console.log(this.props);
-//   }
-
  function onFinish(value){
 
      if(user==='123'&&passwork==='123'){
@@ -33,7 +18,7 @@ import './index.scss';
        setLogined(true)
       //  return history.push('/home')
      }else{
-       alert("登录失败")
+       alert("登录失败:用户名或密码错误")
      }
   };
  function hanldUser(e){

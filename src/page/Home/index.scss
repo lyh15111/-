@@ -1,0 +1,15 @@
+.layout_page{
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+  .trigger{
+    color: rgb(202, 205, 207);
+    margin-left: 20px;
+  }
+  .signout{
+    float: right;
+    right: 20px;
+    top: 15px;
+
+  }
+}
